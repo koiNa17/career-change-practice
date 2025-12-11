@@ -1,19 +1,26 @@
-# day2_types.py
+# 1. 文字列 (String: str) - 文字のデータ
+stock_name = "TOYOTA"
 
-# --- 従来（アマチュア）の書き方 ---
-# 変数の中身が何なのか、コードを追わないとわからない
-user_name = "yoshi"
-user_age = 45
+# 2. 整数 (Integer: int) - 小数点のない数字
+stock_price = 2800
+
+# 3. 浮動小数点数 (Float: float) - 小数点を含む数字
 exchange_rate = 145.50
 
-# --- 実務（プロフェッショナル）の書き方 ---
-# 変数名: 型 = 値 の形式で、意図を明確にする
-client_name: str = "SMBC Nikko"    # str = String (文字列)
-experience_years: int = 15         # int = Integer (整数)
-current_jpy_rate: float = 152.34   # float = Floating point (浮動小数点数)
+# 4. 真偽値 (Boolean: bool) - Yes/No の判定
+is_market_open = True
 
-# リスト（配列）の場合
-skills: list[str] = ["Python", "Docker", "Git"]
+# --- ここで中身と「型」を確認してみましょう ---
 
-print(f"Client: {client_name}")
-print(f"Skills: {skills}")
+# print() は画面に表示する命令、type() は型を調べる命令です
+print(stock_name)
+print(type(stock_name))
+
+print(stock_price)
+print(type(stock_price))
+
+print(exchange_rate)
+print(type(exchange_rate))
+
+print(is_market_open)
+print(type(is_market_open))

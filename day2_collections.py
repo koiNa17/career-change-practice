@@ -1,39 +1,32 @@
-# day2_collections.py
+# --- 1. リスト (List): [ ] を使う ---
+# 例：ある銘柄の過去3日間の終値
+closing_prices = [2800, 2820, 2750]
 
-# --- 1. リスト (List) ---
-# 順序があるデータの集まり
-# 実務イメージ: 調査対象企業のリスト
-target_companies: list[str] = ["Samsung", "SK Hynix", "LG Energy"]
+print("--- リストの操作 ---")
+print(f"リスト全体: {closing_prices}")
 
-# データの追加（append）
-target_companies.append("Hyundai Motor")
+# データへのアクセス: コンピュータは「0」から数え始めます（最重要！）
+print(f"1日目(インデックス0): {closing_prices[0]}") 
+print(f"2日目(インデックス1): {closing_prices[1]}")
 
-print(f"調査対象企業数: {len(target_companies)} 社")
-print(f"最初の企業: {target_companies[0]}")  # 0から数えます
+# データの追加: .append() を使います
+closing_prices.append(2900)
+print(f"追加後のリスト: {closing_prices}")
 
 
-# --- 2. 辞書 (Dictionary) ---
-# キーと値のペア。構造化されたデータ。
-# 実務イメージ: 1社の詳細データ
-company_profile: dict[str, str | int] = {
-    "name": "Samsung Electronics",
-    "industry": "Semiconductor",
-    "founded": 1969
+# --- 2. 辞書 (Dictionary): { } を使う ---
+# 例：ある企業の基本情報
+company_info = {
+    "code": 7203,
+    "name": "TOYOTA",
+    "market": "Prime"
 }
 
-print(f"企業名: {company_profile['name']}")
-print(f"設立年: {company_profile['founded']}")
+print("\n--- 辞書の操作 ---")
+# データへのアクセス: 「キー（見出し）」を指定して中身を取り出します
+print(f"企業名: {company_info['name']}")
+print(f"市場区分: {company_info['market']}")
 
-
-# --- 3. リストと辞書の組み合わせ（★超重要）---
-# 実務ではこの形（JSON形式）でAPIからデータを受け取ることが9割です。
-# Excelの「表」全体のイメージです。
-market_data: list[dict] = [
-    {"country": "Japan", "gdp_growth": 1.2},
-    {"country": "South Korea", "gdp_growth": 1.4},
-    {"country": "USA", "gdp_growth": 2.5},
-]
-
-# 韓国のデータ（リストの1番目の、キー'gdp_growth'）を取り出す
-korea_growth = market_data[1]["gdp_growth"]
-print(f"韓国のGDP成長率: {korea_growth}%")
+# データの追加: 新しいキーを指定して代入するだけです
+company_info["country"] = "Japan"
+print(f"追加後の辞書: {company_info}")
