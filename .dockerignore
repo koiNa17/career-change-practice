@@ -1,0 +1,19 @@
+# Gitの管理ファイル
+.git
+.gitignore
+
+# VS Codeの設定ファイル
+.vscode
+.devcontainer
+
+# 過去のアーカイブ
+archive/
+
+# Pythonのキャッシュファイル
+__pycache__/
+*.pyc
+
+# Docker関連
+docker-compose.yml
+Dockerfile
+README.md

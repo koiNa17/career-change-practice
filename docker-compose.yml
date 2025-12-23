@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  stock-app:
+    # 現在のディレクトリにある Dockerfile を使ってビルドする
+    build: .
+    # コンテナの名前
+    container_name: yoshi-stock-app
+    # ポート転送: ホストの8501番 <-> コンテナの8501番
+    ports:
+      - "8501:8501"
+    # ファイルを変更したら即反映されるように同期設定（バインドマウント）
+    volumes:
+      - .:/app
+    # 環境変数の設定（必要に応じて）
+    environment:
+      - TZ=Asia/Tokyo
